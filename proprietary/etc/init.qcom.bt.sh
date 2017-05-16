@@ -158,8 +158,8 @@ config_bt ()
        then
            setprop ro.bluetooth.hfp.ver 1.7
            setprop ro.qualcomm.bt.hci_transport smd
-           setprop bt.version.driver WCNSS-PR-4-0-00278
-           setprop wifi.version.driver WCNSS-PR-4-0-00278
+           setprop bt.version.driver WCNSS-PR-4-0-00344
+           setprop wifi.version.driver WCNSS-PR-4-0-00344
        fi
        ;;
     "apq8084" | "mpq8092" | "msm8994" | "msm8992" )

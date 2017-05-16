@@ -243,7 +243,10 @@ PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/lib/hw/camera.msm8953.so:system/lib/hw/camera.msm8953.so \
     vendor/asus/Z017/proprietary/lib/libAsusDngCreator.so:system/lib/libAsusDngCreator.so \
     vendor/asus/Z017/proprietary/lib/libAsusRGBSensorHAL.so:system/lib/libAsusRGBSensorHAL.so \
+    vendor/asus/Z017/proprietary/lib/libStereoRectification.so:system/lib/libStereoRectification.so \
     vendor/asus/Z017/proprietary/lib/libarcsoft_beautyshot.so:system/lib/libarcsoft_beautyshot.so \
+    vendor/asus/Z017/proprietary/lib/libarcsoft_dualcam_optical_zoom.so:system/lib/libarcsoft_dualcam_optical_zoom.so \
+    vendor/asus/Z017/proprietary/lib/libarcsoft_dualcam_refocus.so:system/lib/libarcsoft_dualcam_refocus.so \
     vendor/asus/Z017/proprietary/lib/libarcsoft_face_tracking.so:system/lib/libarcsoft_face_tracking.so \
     vendor/asus/Z017/proprietary/lib/libarcsoft_hdr.so:system/lib/libarcsoft_hdr.so \
     vendor/asus/Z017/proprietary/lib/libarcsoft_night_shot.so:system/lib/libarcsoft_night_shot.so \
@@ -272,10 +275,7 @@ PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/lib/libsarcsoftface.so:system/lib/libsarcsoftface.so \
     vendor/asus/Z017/proprietary/lib/libsphere3.so:system/lib/libsphere3.so \
     vendor/asus/Z017/proprietary/lib/libxbspk_LaserRgbInterface.so:system/lib/libxbspk_LaserRgbInterface.so \
-    vendor/asus/Z017/proprietary/lib/libxditk_DIT_MSM8937.so:system/lib/libxditk_DIT_MSM8937.so \
-    vendor/asus/Z017/proprietary/lib/libxditk_DIT_MSM8953.so:system/lib/libxditk_DIT_MSM8953.so \
-    vendor/asus/Z017/proprietary/lib/libxditk_DIT_MSM8956.so:system/lib/libxditk_DIT_MSM8956.so \
-    vendor/asus/Z017/proprietary/lib/libxditk_DIT_MSM8996.so:system/lib/libxditk_DIT_MSM8996.so \
+    vendor/asus/Z017/proprietary/lib/libxditk_DIT_MSMv1.so:system/lib/libxditk_DIT_MSMv1.so \
     vendor/asus/Z017/proprietary/lib/libxditk_DIT_Manager.so:system/lib/libxditk_DIT_Manager.so \
     vendor/asus/Z017/proprietary/lib/libxditk_ISP.so:system/lib/libxditk_ISP.so \
     vendor/asus/Z017/proprietary/lib/libxditk_arch.so:system/lib/libxditk_arch.so \

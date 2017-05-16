@@ -74,19 +74,21 @@ function configure_memory_parameters() {
     if [ "$arch_type" == "aarch64" ] && [ $MemTotal -gt 2097152 ]; then
         echo 10 > /sys/module/process_reclaim/parameters/pressure_min
         echo 1024 > /sys/module/process_reclaim/parameters/per_swap_size
-        echo "18432,23040,27648,32256,55296,80640" > /sys/module/lowmemorykiller/parameters/minfree
+        echo "48432,63040,70648,95256,140296,155640" > /sys/module/lowmemorykiller/parameters/minfree
         echo 81250 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
         adjZeroMinFree=18432
 		echo 805306368 > /sys/block/zram0/disksize
         echo "10000" > /proc/sys/vm/vfs_cache_pressure
-        echo "0" > /proc/sys/vm/page-cluster
+        #echo "0" > /proc/sys/vm/page-cluster
         #setprop dalvik.vm.heapgrowthlimit 96m
-        echo "80" > /proc/sys/vm/swappiness
+        echo "100" > /proc/sys/vm/swappiness
         # Reset to default value 512m due to camera performance issue
         # setprop dalvik.vm.heapsize 256m
-        setprop dalvik.vm.heapstartsize 8m
-        setprop dalvik.vm.isa.arm.features div
-        echo 1 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
+        #setprop dalvik.vm.heapstartsize 8m
+        #setprop dalvik.vm.isa.arm.features div
+        echo 0 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
+		setprop dalvik.vm.dex2oat-filter speed
+		setprop pm.dexopt.install speed        
 		echo 805306368 > /sys/block/zram0/disksize		
     elif [ "$arch_type" == "aarch64" ] && [ $MemTotal -gt 1048576 ]; then
         echo 50 > /sys/module/process_reclaim/parameters/pressure_min
