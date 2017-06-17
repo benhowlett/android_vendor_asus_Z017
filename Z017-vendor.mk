@@ -68,7 +68,6 @@ PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/bin/exfatlabel:system/bin/exfatlabel \
     vendor/asus/Z017/proprietary/bin/exfatvsn:system/bin/exfatvsn \
     vendor/asus/Z017/proprietary/bin/fpseek:system/bin/fpseek \
-    vendor/asus/Z017/proprietary/bin/fstman:system/bin/fstman \
     vendor/asus/Z017/proprietary/bin/fw_auto_update.sh:system/bin/fw_auto_update.sh \
     vendor/asus/Z017/proprietary/bin/garden_app:system/bin/garden_app \
     vendor/asus/Z017/proprietary/bin/gpsone_daemon:system/bin/gpsone_daemon \
@@ -77,6 +76,7 @@ PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/bin/gx_fpd:system/bin/gx_fpd \
     vendor/asus/Z017/proprietary/bin/gx_fpd_gxfp3:system/bin/gx_fpd_gxfp3 \
     vendor/asus/Z017/proprietary/bin/hal_proxy_daemon:system/bin/hal_proxy_daemon \
+    vendor/asus/Z017/proprietary/bin/hostapd_cmd:system/bin/hostapd_cmd \
     vendor/asus/Z017/proprietary/bin/hvdcp_opti:system/bin/hvdcp_opti \
     vendor/asus/Z017/proprietary/bin/install_key_server:system/bin/install_key_server \
     vendor/asus/Z017/proprietary/bin/lightsensor_calibration_start:system/bin/lightsensor_calibration_start \
@@ -204,7 +204,6 @@ PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/etc/firmware/gxfpa.b06:system/etc/firmware/gxfpa.b06 \
     vendor/asus/Z017/proprietary/etc/firmware/gxfpa.mdt:system/etc/firmware/gxfpa.mdt \
     vendor/asus/Z017/proprietary/etc/fpsensortest.sh:system/etc/fpsensortest.sh \
-    vendor/asus/Z017/proprietary/etc/fpservice.sh:system/etc/fpservice.sh \
     vendor/asus/Z017/proprietary/etc/hcidump.sh:system/etc/hcidump.sh \
     vendor/asus/Z017/proprietary/etc/init.asus.audbg.sh:system/etc/init.asus.audbg.sh \
     vendor/asus/Z017/proprietary/etc/init.asus.camera.sh:system/etc/init.asus.camera.sh \
@@ -218,7 +217,6 @@ PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/etc/permissions/lpa.xml:system/etc/permissions/lpa.xml \
     vendor/asus/Z017/proprietary/etc/permissions/org.ifaa.android.manager.permissions.xml:system/etc/permissions/org.ifaa.android.manager.permissions.xml \
     vendor/asus/Z017/proprietary/etc/permissions/telephonyservice.xml:system/etc/permissions/telephonyservice.xml \
-    vendor/asus/Z017/proprietary/etc/public.libraries.txt:system/etc/public.libraries.txt \
     vendor/asus/Z017/proprietary/etc/rgb_sensor_init.sh:system/etc/rgb_sensor_init.sh \
     vendor/asus/Z017/proprietary/etc/rndisdiag.sh:system/etc/rndisdiag.sh \
     vendor/asus/Z017/proprietary/etc/select_mic.sh:system/etc/select_mic.sh \
@@ -228,9 +226,6 @@ PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/etc/sensors_factory_init.sh:system/etc/sensors_factory_init.sh \
     vendor/asus/Z017/proprietary/etc/spkampcal.sh:system/etc/spkampcal.sh \
     vendor/asus/Z017/proprietary/etc/tamcid:system/etc/tamcid \
-    vendor/asus/Z017/proprietary/etc/wfdconfig.xml:system/etc/wfdconfig.xml \
-    vendor/asus/Z017/proprietary/etc/wfdconfig_le.xml:system/etc/wfdconfig_le.xml \
-    vendor/asus/Z017/proprietary/etc/wfdconfigsink.xml:system/etc/wfdconfigsink.xml \
     vendor/asus/Z017/proprietary/framework/btmultisimlibrary.jar:system/framework/btmultisimlibrary.jar \
     vendor/asus/Z017/proprietary/framework/ifaamanager.jar:system/framework/ifaamanager.jar \
     vendor/asus/Z017/proprietary/framework/tcmiface.jar:system/framework/tcmiface.jar \
@@ -1131,6 +1126,11 @@ PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/xbin/ssr_cfg.sh:system/xbin/ssr_cfg.sh \
     vendor/asus/Z017/proprietary/xbin/ssr_ui.sh:system/xbin/ssr_ui.sh
 
+PRODUCT_PACKAGES += \
+    AsusSplendidCommandAgent \
+    AsusSplendid \
+    FlipCover3
+
 ifeq ($(QCPATH),)
 PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/bin/adsprpcd:system/bin/adsprpcd \
@@ -1149,10 +1149,6 @@ PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/bin/irsc_util:system/bin/irsc_util \
     vendor/asus/Z017/proprietary/bin/is_keybox_valid:system/bin/is_keybox_valid \
     vendor/asus/Z017/proprietary/bin/loc_launcher:system/bin/loc_launcher \
-    vendor/asus/Z017/proprietary/bin/mmi:system/bin/mmi \
-    vendor/asus/Z017/proprietary/bin/mmi_agent32:system/bin/mmi_agent32 \
-    vendor/asus/Z017/proprietary/bin/mmi_agent64:system/bin/mmi_agent64 \
-    vendor/asus/Z017/proprietary/bin/mmi_diag:system/bin/mmi_diag \
     vendor/asus/Z017/proprietary/bin/msm_irqbalance:system/bin/msm_irqbalance \
     vendor/asus/Z017/proprietary/bin/netmgrd:system/bin/netmgrd \
     vendor/asus/Z017/proprietary/bin/pm-proxy:system/bin/pm-proxy \
@@ -1296,10 +1292,6 @@ PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/etc/firmware/widevine.b05:system/etc/firmware/widevine.b05 \
     vendor/asus/Z017/proprietary/etc/firmware/widevine.b06:system/etc/firmware/widevine.b06 \
     vendor/asus/Z017/proprietary/etc/firmware/widevine.mdt:system/etc/firmware/widevine.mdt \
-    vendor/asus/Z017/proprietary/etc/ftm_test_config:system/etc/ftm_test_config \
-    vendor/asus/Z017/proprietary/etc/ftm_test_config_msm8953-sku3-tasha-snd-card:system/etc/ftm_test_config_msm8953-sku3-tasha-snd-card \
-    vendor/asus/Z017/proprietary/etc/ftm_test_config_mtp:system/etc/ftm_test_config_mtp \
-    vendor/asus/Z017/proprietary/etc/ftm_test_config_wcd9335:system/etc/ftm_test_config_wcd9335 \
     vendor/asus/Z017/proprietary/etc/hsic.control.bt.sh:system/etc/hsic.control.bt.sh \
     vendor/asus/Z017/proprietary/etc/icesoundconfig.def:system/etc/icesoundconfig.def \
     vendor/asus/Z017/proprietary/etc/icesoundpresets.def:system/etc/icesoundpresets.def \
@@ -1314,67 +1306,6 @@ PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
     vendor/asus/Z017/proprietary/etc/init.qcom.uicc.sh:system/etc/init.qcom.uicc.sh \
     vendor/asus/Z017/proprietary/etc/init.qti.ims.sh:system/etc/init.qti.ims.sh \
-    vendor/asus/Z017/proprietary/etc/mmi/fail.png:system/etc/mmi/fail.png \
-    vendor/asus/Z017/proprietary/etc/mmi/fonts.ttf:system/etc/mmi/fonts.ttf \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/footer.xml:system/etc/mmi/layout/footer.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/footer_fail.xml:system/etc/mmi/layout/footer_fail.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/header.xml:system/etc/mmi/layout/header.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_battery.xml:system/etc/mmi/layout/layout_battery.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_bluetooth.xml:system/etc/mmi/layout/layout_bluetooth.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_button_backlight.xml:system/etc/mmi/layout/layout_button_backlight.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_camera_back.xml:system/etc/mmi/layout/layout_camera_back.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_camera_front.xml:system/etc/mmi/layout/layout_camera_front.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_cb.xml:system/etc/mmi/layout/layout_cb.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_common.xml:system/etc/mmi/layout/layout_common.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_confirm.xml:system/etc/mmi/layout/layout_confirm.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_cpu.xml:system/etc/mmi/layout/layout_cpu.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_emmc.xml:system/etc/mmi/layout/layout_emmc.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_feedback.xml:system/etc/mmi/layout/layout_feedback.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_flashlight.xml:system/etc/mmi/layout/layout_flashlight.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_fm.xml:system/etc/mmi/layout/layout_fm.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_gps.xml:system/etc/mmi/layout/layout_gps.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_gsensor.xml:system/etc/mmi/layout/layout_gsensor.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_gyroscope.xml:system/etc/mmi/layout/layout_gyroscope.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_handset.xml:system/etc/mmi/layout/layout_handset.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_headset.xml:system/etc/mmi/layout/layout_headset.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_headset_key.xml:system/etc/mmi/layout/layout_headset_key.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_key.xml:system/etc/mmi/layout/layout_key.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_lcd.xml:system/etc/mmi/layout/layout_lcd.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_lcd_backlight.xml:system/etc/mmi/layout/layout_lcd_backlight.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_led_blue.xml:system/etc/mmi/layout/layout_led_blue.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_led_green.xml:system/etc/mmi/layout/layout_led_green.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_led_red.xml:system/etc/mmi/layout/layout_led_red.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_loudspeaker.xml:system/etc/mmi/layout/layout_loudspeaker.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_lsensor.xml:system/etc/mmi/layout/layout_lsensor.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_memory.xml:system/etc/mmi/layout/layout_memory.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_msensor.xml:system/etc/mmi/layout/layout_msensor.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_nfc.xml:system/etc/mmi/layout/layout_nfc.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_pcba.xml:system/etc/mmi/layout/layout_pcba.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_primary_mic.xml:system/etc/mmi/layout/layout_primary_mic.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_psensor.xml:system/etc/mmi/layout/layout_psensor.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_reboot.xml:system/etc/mmi/layout/layout_reboot.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_report.xml:system/etc/mmi/layout/layout_report.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_sdcard.xml:system/etc/mmi/layout/layout_sdcard.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_simcard1.xml:system/etc/mmi/layout/layout_simcard1.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_simcard2.xml:system/etc/mmi/layout/layout_simcard2.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_system_info.xml:system/etc/mmi/layout/layout_system_info.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_touch.xml:system/etc/mmi/layout/layout_touch.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_vibrator.xml:system/etc/mmi/layout/layout_vibrator.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/layout_wifi.xml:system/etc/mmi/layout/layout_wifi.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/layout/main.xml:system/etc/mmi/layout/main.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/mmi.xml:system/etc/mmi/mmi.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/pagedown.png:system/etc/mmi/pagedown.png \
-    vendor/asus/Z017/proprietary/etc/mmi/pageup.png:system/etc/mmi/pageup.png \
-    vendor/asus/Z017/proprietary/etc/mmi/pass.png:system/etc/mmi/pass.png \
-    vendor/asus/Z017/proprietary/etc/mmi/path_config.xml:system/etc/mmi/path_config.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/poweroff.png:system/etc/mmi/poweroff.png \
-    vendor/asus/Z017/proprietary/etc/mmi/qualsound.wav:system/etc/mmi/qualsound.wav \
-    vendor/asus/Z017/proprietary/etc/mmi/reboot.png:system/etc/mmi/reboot.png \
-    vendor/asus/Z017/proprietary/etc/mmi/report.png:system/etc/mmi/report.png \
-    vendor/asus/Z017/proprietary/etc/mmi/reset.png:system/etc/mmi/reset.png \
-    vendor/asus/Z017/proprietary/etc/mmi/runall.png:system/etc/mmi/runall.png \
-    vendor/asus/Z017/proprietary/etc/mmi/strings-zh-rCN.xml:system/etc/mmi/strings-zh-rCN.xml \
-    vendor/asus/Z017/proprietary/etc/mmi/strings.xml:system/etc/mmi/strings.xml \
     vendor/asus/Z017/proprietary/etc/permissions/ConnectivityExt.xml:system/etc/permissions/ConnectivityExt.xml \
     vendor/asus/Z017/proprietary/etc/permissions/cneapiclient.xml:system/etc/permissions/cneapiclient.xml \
     vendor/asus/Z017/proprietary/etc/permissions/com.qti.dpmframework.xml:system/etc/permissions/com.qti.dpmframework.xml \
@@ -1484,7 +1415,6 @@ PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/vendor/etc/RIDL/OTA-Logs.dmc:system/vendor/etc/RIDL/OTA-Logs.dmc \
     vendor/asus/Z017/proprietary/vendor/etc/RIDL/RIDL.db:system/vendor/etc/RIDL/RIDL.db \
     vendor/asus/Z017/proprietary/vendor/etc/RIDL/qdss.cfg:system/vendor/etc/RIDL/qdss.cfg \
-    vendor/asus/Z017/proprietary/vendor/etc/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf \
     vendor/asus/Z017/proprietary/vendor/etc/qti-logkit/IMS.dmc:system/vendor/etc/qti-logkit/IMS.dmc \
     vendor/asus/Z017/proprietary/vendor/etc/qti-logkit/audiobasic.dmc:system/vendor/etc/qti-logkit/audiobasic.dmc \
     vendor/asus/Z017/proprietary/vendor/etc/qti-logkit/gnsslocationlogging.dmc:system/vendor/etc/qti-logkit/gnsslocationlogging.dmc \
@@ -1692,7 +1622,6 @@ PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/vendor/lib/libmm-qdcm.so:system/vendor/lib/libmm-qdcm.so \
     vendor/asus/Z017/proprietary/vendor/lib/libmmQSM.so:system/vendor/lib/libmmQSM.so \
     vendor/asus/Z017/proprietary/vendor/lib/libmmhttpstack.so:system/vendor/lib/libmmhttpstack.so \
-    vendor/asus/Z017/proprietary/vendor/lib/libmmi.so:system/vendor/lib/libmmi.so \
     vendor/asus/Z017/proprietary/vendor/lib/libmmiipstreammmihttp.so:system/vendor/lib/libmmiipstreammmihttp.so \
     vendor/asus/Z017/proprietary/vendor/lib/libmmipstreamaal.so:system/vendor/lib/libmmipstreamaal.so \
     vendor/asus/Z017/proprietary/vendor/lib/libmmipstreamnetwork.so:system/vendor/lib/libmmipstreamnetwork.so \
@@ -1811,27 +1740,6 @@ PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/vendor/lib/libxtadapter.so:system/vendor/lib/libxtadapter.so \
     vendor/asus/Z017/proprietary/vendor/lib/libxtwifi_ulp_adaptor.so:system/vendor/lib/libxtwifi_ulp_adaptor.so \
     vendor/asus/Z017/proprietary/vendor/lib/mediadrm/libwvdrmengine.so:system/vendor/lib/mediadrm/libwvdrmengine.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_audio.so:system/vendor/lib/mmi_audio.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_battery.so:system/vendor/lib/mmi_battery.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_bluetooth.so:system/vendor/lib/mmi_bluetooth.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_camera.so:system/vendor/lib/mmi_camera.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_cpu.so:system/vendor/lib/mmi_cpu.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_flashlight.so:system/vendor/lib/mmi_flashlight.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_fm.so:system/vendor/lib/mmi_fm.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_gps.so:system/vendor/lib/mmi_gps.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_headset.so:system/vendor/lib/mmi_headset.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_key.so:system/vendor/lib/mmi_key.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_lcd.so:system/vendor/lib/mmi_lcd.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_light.so:system/vendor/lib/mmi_light.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_memory.so:system/vendor/lib/mmi_memory.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_nfc.so:system/vendor/lib/mmi_nfc.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_sensor.so:system/vendor/lib/mmi_sensor.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_sim.so:system/vendor/lib/mmi_sim.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_storage.so:system/vendor/lib/mmi_storage.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_sysinfo.so:system/vendor/lib/mmi_sysinfo.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_touch.so:system/vendor/lib/mmi_touch.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_vibrator.so:system/vendor/lib/mmi_vibrator.so \
-    vendor/asus/Z017/proprietary/vendor/lib/mmi_wifi.so:system/vendor/lib/mmi_wifi.so \
     vendor/asus/Z017/proprietary/vendor/lib/qcdrm/playready/lib/drm/libdrmprplugin_customer.so:system/vendor/lib/qcdrm/playready/lib/drm/libdrmprplugin_customer.so \
     vendor/asus/Z017/proprietary/vendor/lib/qcdrm/playready/lib/libprdrmdecrypt_customer.so:system/vendor/lib/qcdrm/playready/lib/libprdrmdecrypt_customer.so \
     vendor/asus/Z017/proprietary/vendor/lib/qcdrm/playready/lib/libtzplayready_customer.so:system/vendor/lib/qcdrm/playready/lib/libtzplayready_customer.so \
@@ -1854,7 +1762,6 @@ PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/vendor/lib/soundfx/libqcbassboost.so:system/vendor/lib/soundfx/libqcbassboost.so \
     vendor/asus/Z017/proprietary/vendor/lib/soundfx/libqcreverb.so:system/vendor/lib/soundfx/libqcreverb.so \
     vendor/asus/Z017/proprietary/vendor/lib/soundfx/libqcvirt.so:system/vendor/lib/soundfx/libqcvirt.so \
-    vendor/asus/Z017/proprietary/vendor/lib/test_suite_no_sensor.so:system/vendor/lib/test_suite_no_sensor.so \
     vendor/asus/Z017/proprietary/vendor/lib64/egl/eglSubDriverAndroid.so:system/vendor/lib64/egl/eglSubDriverAndroid.so \
     vendor/asus/Z017/proprietary/vendor/lib64/egl/libEGL_adreno.so:system/vendor/lib64/egl/libEGL_adreno.so \
     vendor/asus/Z017/proprietary/vendor/lib64/egl/libGLESv1_CM_adreno.so:system/vendor/lib64/egl/libGLESv1_CM_adreno.so \
@@ -1948,7 +1855,6 @@ PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/vendor/lib64/libaudioparsers.so:system/vendor/lib64/libaudioparsers.so \
     vendor/asus/Z017/proprietary/vendor/lib64/libavenhancements.so:system/vendor/lib64/libavenhancements.so \
     vendor/asus/Z017/proprietary/vendor/lib64/libbccQTI.so:system/vendor/lib64/libbccQTI.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/libbt-vendor.so:system/vendor/lib64/libbt-vendor.so \
     vendor/asus/Z017/proprietary/vendor/lib64/libbtnv.so:system/vendor/lib64/libbtnv.so \
     vendor/asus/Z017/proprietary/vendor/lib64/libc2d30-a3xx.so:system/vendor/lib64/libc2d30-a3xx.so \
     vendor/asus/Z017/proprietary/vendor/lib64/libc2d30-a4xx.so:system/vendor/lib64/libc2d30-a4xx.so \
@@ -2015,7 +1921,6 @@ PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/vendor/lib64/libmm-qdcm.so:system/vendor/lib64/libmm-qdcm.so \
     vendor/asus/Z017/proprietary/vendor/lib64/libmmQSM.so:system/vendor/lib64/libmmQSM.so \
     vendor/asus/Z017/proprietary/vendor/lib64/libmmhttpstack.so:system/vendor/lib64/libmmhttpstack.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/libmmi.so:system/vendor/lib64/libmmi.so \
     vendor/asus/Z017/proprietary/vendor/lib64/libmmiipstreammmihttp.so:system/vendor/lib64/libmmiipstreammmihttp.so \
     vendor/asus/Z017/proprietary/vendor/lib64/libmmipstreamaal.so:system/vendor/lib64/libmmipstreamaal.so \
     vendor/asus/Z017/proprietary/vendor/lib64/libmmipstreamnetwork.so:system/vendor/lib64/libmmipstreamnetwork.so \
@@ -2124,26 +2029,6 @@ PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/vendor/lib64/libxt_native.so:system/vendor/lib64/libxt_native.so \
     vendor/asus/Z017/proprietary/vendor/lib64/libxtadapter.so:system/vendor/lib64/libxtadapter.so \
     vendor/asus/Z017/proprietary/vendor/lib64/libxtwifi_ulp_adaptor.so:system/vendor/lib64/libxtwifi_ulp_adaptor.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_audio.so:system/vendor/lib64/mmi_audio.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_battery.so:system/vendor/lib64/mmi_battery.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_bluetooth.so:system/vendor/lib64/mmi_bluetooth.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_cpu.so:system/vendor/lib64/mmi_cpu.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_flashlight.so:system/vendor/lib64/mmi_flashlight.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_fm.so:system/vendor/lib64/mmi_fm.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_gps.so:system/vendor/lib64/mmi_gps.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_headset.so:system/vendor/lib64/mmi_headset.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_key.so:system/vendor/lib64/mmi_key.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_lcd.so:system/vendor/lib64/mmi_lcd.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_light.so:system/vendor/lib64/mmi_light.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_memory.so:system/vendor/lib64/mmi_memory.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_nfc.so:system/vendor/lib64/mmi_nfc.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_sensor.so:system/vendor/lib64/mmi_sensor.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_sim.so:system/vendor/lib64/mmi_sim.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_storage.so:system/vendor/lib64/mmi_storage.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_sysinfo.so:system/vendor/lib64/mmi_sysinfo.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_touch.so:system/vendor/lib64/mmi_touch.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_vibrator.so:system/vendor/lib64/mmi_vibrator.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/mmi_wifi.so:system/vendor/lib64/mmi_wifi.so \
     vendor/asus/Z017/proprietary/vendor/lib64/sensor_calibrate.so:system/vendor/lib64/sensor_calibrate.so \
     vendor/asus/Z017/proprietary/vendor/lib64/soundfx/libqcbassboost.so:system/vendor/lib64/soundfx/libqcbassboost.so \
     vendor/asus/Z017/proprietary/vendor/lib64/soundfx/libqcreverb.so:system/vendor/lib64/soundfx/libqcreverb.so \
@@ -2176,11 +2061,12 @@ PRODUCT_COPY_FILES += \
     vendor/asus/Z017/proprietary/vendor/lib/libqti-iop-client.so:system/vendor/lib/libqti-iop-client.so \
     vendor/asus/Z017/proprietary/vendor/lib/libqti-iop.so:system/vendor/lib/libqti-iop.so \
     vendor/asus/Z017/proprietary/vendor/lib/libqti-perfd-client.so:system/vendor/lib/libqti-perfd-client.so \
+    vendor/asus/Z017/proprietary/vendor/lib/libqti-wl.so:system/vendor/lib/libqti-wl.so \
     vendor/asus/Z017/proprietary/vendor/lib/libqti_performance.so:system/vendor/lib/libqti_performance.so \
     vendor/asus/Z017/proprietary/vendor/lib64/libqti-at.so:system/vendor/lib64/libqti-at.so \
     vendor/asus/Z017/proprietary/vendor/lib64/libqti-gt.so:system/vendor/lib64/libqti-gt.so \
     vendor/asus/Z017/proprietary/vendor/lib64/libqti-iop-client.so:system/vendor/lib64/libqti-iop-client.so \
-    vendor/asus/Z017/proprietary/vendor/lib64/libqti-iop.so:system/vendor/lib64/libqti-iop.so \
     vendor/asus/Z017/proprietary/vendor/lib64/libqti-perfd-client.so:system/vendor/lib64/libqti-perfd-client.so \
+    vendor/asus/Z017/proprietary/vendor/lib64/libqti-wl.so:system/vendor/lib64/libqti-wl.so \
     vendor/asus/Z017/proprietary/vendor/lib64/libqti_performance.so:system/vendor/lib64/libqti_performance.so
 endif
